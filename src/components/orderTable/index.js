@@ -7,14 +7,22 @@ import { type } from '@testing-library/user-event/dist/type';
 const OrderTable = () => {
   const [selectedMenu, setSelectedMenu] = useState('Pending');
 
-  const orders = [
+  const [orders, setOrders] = useState([
     { add: '+', selectbox: <input type='checkbox'/>, channel: <img src={process.env.PUBLIC_URL + '/images/shoppify.jpg'} className='shoppify-img' alt='shoppify'/>, orderNo: '#TKN20203754', orderDate: '2022-05-04', city: 'Lucknow', customerName: 'Abhishek Dixit', orderValue: '0.00', status: 'Pending' },
     { add: '+', selectbox: <input type='checkbox'/>, channel: <img src={process.env.PUBLIC_URL + '/images/shoppify.jpg'} className='shoppify-img' alt='shoppify'/>, orderNo: '#TKN20203754', orderDate: '2022-05-04', city: 'Lucknow', customerName: 'Abhishek Dixit', orderValue: '0.00', status: 'Pending' },
     { add: '+', selectbox: <input type='checkbox'/>, channel: <img src={process.env.PUBLIC_URL + '/images/shoppify.jpg'} className='shoppify-img' alt='shoppify'/>, orderNo: '#TKN20203754', orderDate: '2022-05-04', city: 'Lucknow', customerName: 'Abhishek Dixit', orderValue: '0.00', status: 'Pending' },
-  ];
+  ]);
 
   const tabButtons = ['Pending', 'Accepted', 'AWB Created', 'Ready to Ship', 'Shipped', 'Completed', 'Cancelled']
 
+  const changeMenu = (value) => {
+    setSelectedMenu(value);
+    const updatedOrders = orders.map(order=> ({
+      ...order,
+      status: value
+    }))
+    setOrders(updatedOrders);
+  }
 
   return (
     <div className="container">
@@ -23,7 +31,7 @@ const OrderTable = () => {
       </header>
       <nav className="navigation">
         {tabButtons.map((button, index) => (
-          <button className={`tab ${selectedMenu === button ? 'selected' : ''}`} key={index} onClick={()=> setSelectedMenu(button)}>{button}</button>
+          <button className={`tab ${selectedMenu === button ? 'selected' : ''}`} key={index} value={button} onClick={(e)=> changeMenu(e.target.value)}>{button}</button>
         ))
         }
       </nav>
@@ -59,12 +67,19 @@ const OrderTable = () => {
                 <td>{order.city}</td>
                 <td>{order.customerName}</td>
                 <td>{order.orderValue}</td>
-                <td><span className={`status ${order.status.toLowerCase()}`}>{order.status}</span></td>
+                <td><span className={`status ${order.status.toLowerCase().replaceAll(' ', '-')}`}>{order.status}</span></td>
                 <td><button className="actionButton">Actions</button></td>
               </tr>
             ))}
           </tbody>
         </table>
+        <hr/>
+        <div className='page-count-div'>
+          <button type='button' className='page-btn'>{`<`}</button>
+          <button type='button' className='page-count page-btn'>1</button>
+          <button type='button' className='page-btn'>{`>`}</button>
+          <button type='button'>20/page</button>
+        </div>
       </div>
     </div>
   );

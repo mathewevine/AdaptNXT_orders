@@ -76,10 +76,40 @@
   }
   
   .status.pending {
-    background-color: #fef3c7;
+    background-color: #111110;
     color: #f59e0b;
   }
+
+  .status.accepted {
+    background-color: #0b0b0b;
+    color: #6aea61;
+  }
   
+  .status.awb-created {
+    background-color: #0b0b0b;
+    color: white;
+  }
+
+  .status.ready-to-ship {
+    background-color: #0b0b0b;
+    color: yellow;
+  }
+
+  .status.shipped {
+    background-color: #f4f4f4;
+    color: rgb(34, 21, 213);
+  }
+
+  .status.completed {
+    background-color: #23c41a;
+    color: rgb(255, 255, 255);
+  }
+
+  .status.cancelled {
+    background-color: #f70404;
+    color: rgb(8, 8, 8);
+  }
+
   .actionButton {
     background-color: #e5e7eb;
     border: none;
@@ -112,4 +142,20 @@
   .selected {
     border-bottom: 3px solid blue;
     color: blue;
+  }
+
+  .page-btn {
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+
+  .page-count {
+    color: #3b82f6;
+    border-color: #3b82f6;
+  }
+
+  .page-count-div {
+    margin-left: 80%;
   }

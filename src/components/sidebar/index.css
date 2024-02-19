@@ -16,6 +16,12 @@
 .sidebar div {
     display: flex;
     align-items: center;
+    cursor: pointer;
+}
+
+.sidebar div:hover {
+    background-color: aqua;
+    width: 100%;
 }
 
 .selected-menu {
