@@ -25,13 +25,11 @@
   }
   
   .tab {
-    background-color: #e5e7eb;
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
     font-size: 1rem;
     color: #374151;
-    border-radius: 0.375rem;
   }
   
   .tab:hover, .tab.active {
@@ -44,6 +42,8 @@
     border-radius: 0.375rem;
     overflow: hidden;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 20px;
   }
   
   .orderTable table {
@@ -92,3 +92,24 @@
     background-color: #d1d5db;
   }
   
+  .order-options {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .order-options button {
+    margin: 0 20px;
+    width: 130px;
+    height: 30px;
+    background-color: transparent;
+  }
+
+  .shoppify-img {
+    width: 40px;
+    height: 30px;
+  }
+
+  .selected {
+    border-bottom: 3px solid blue;
+    color: blue;
+  }

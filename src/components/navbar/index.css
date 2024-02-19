@@ -1,0 +1,24 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.navbar-left {
+    margin-left: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-btn {
+    border: none;
+    margin-right: 40px;
+
+}

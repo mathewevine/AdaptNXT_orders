@@ -1,10 +1,17 @@
 import './App.css';
-import OrderTable from './components/main';
+import OrderTable from './components/orderTable';
+import Navbar from './components/navbar';
+import NavigationBar from './components/sidebar';
 
 function App() {
   return (
     <div className="App">
-      <OrderTable />
+      <Navbar />
+      <div className='order-view'>
+        <NavigationBar/>
+        <OrderTable />
+      </div>
+      
     </div>
   );
 }

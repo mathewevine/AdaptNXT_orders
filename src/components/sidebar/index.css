@@ -1,0 +1,26 @@
+.sidebar-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    width: 250px;
+}
+
+.sidebar div {
+    display: flex;
+    align-items: center;
+}
+
+.selected-menu {
+    background-color: rgba(13, 13, 217, 0.182);
+    border-right: 5px solid blue;
+    color: blue;
+    width: 100%;
+}

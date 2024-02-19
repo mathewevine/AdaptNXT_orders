@@ -1,17 +1,18 @@
 import React from 'react'
+import './index.css'
 
 const Navbar = () => {
   return (
-    <div>
+    <div className='navbar'>
         <div className='navbar-left'>
             <img src='' alt="logo"/>
-            <button className='sidebar-btn'>Sidebar</button>
+            <button className='icon-btn'><img src={process.env.PUBLIC_URL + '/images/sidebar-icon.png'} alt='sidebar' className='icon'/></button>
         </div>
         <div className='navbar-right'>
-            <button className='day-night-mode'><img src='' alt='moon'/></button>
-            <button className='notifications-btn'><img src='' alt='notifications'/></button>
-            <button className='language-change'><img src='' alt='language'/></button>
-            <button className='avator-btn'><img src='' alt='avator'/></button>
+            <button className='icon-btn'><img src={process.env.PUBLIC_URL + '/images/moon-icon.png'} alt='moon' className='icon'/></button>
+            <button className='icon-btn'><img src={process.env.PUBLIC_URL + '/images/notification-icon.png'} alt='notifications' className='icon'/></button>
+            <button className='icon-btn'><img src={process.env.PUBLIC_URL + '/images/language-icon.jpg'} alt='language' className='icon'/></button>
+            <button className='icon-btn'><img src='' alt='avator' className='icon'/></button>
         </div>
     </div>
   )
